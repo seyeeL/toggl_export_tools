@@ -11,7 +11,7 @@ let projectInfo = {}
 
 const getTogglTimeEntries = async ({ fileNamePrefix }) => {
   try {
-    const response = await fetchTimeEntries(start_date, end_date)
+    const response = await fetchTimeEntries({start_date, end_date})
     const formattedEntries = formatTimeEntries(response)
     let output = handleEntries(formattedEntries)
     writeFile(output, {
